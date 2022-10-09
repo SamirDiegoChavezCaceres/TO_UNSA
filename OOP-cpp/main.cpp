@@ -7,23 +7,23 @@
 using namespace std;
 int main()
 {
-    A a = E();
-    //1. a.goo();
+    //A a = E();
+    //a.goo(); //1
     A a = C(); //4
     a.foo(); //4
-    A a = D();
+    //A a = D();
     //a.goo(); //5
     D().foo(); //6
     E().goo(); //2.
     //E e = A(); //3
     //e.foo(); //3.
     cout << "-------------------" << endl;
-    A a;
+    A a1;
     B b;
     C c;
     D d;
     E e;
-    a.foo();
+    a1.foo();
     b.foo();
     c.goo();
     d.goo();

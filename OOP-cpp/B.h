@@ -7,4 +7,4 @@ class B : public A {
     public: 
         virtual void foo(){ cout << "B" << endl; }
 };
-#endif B_H
+#endif
