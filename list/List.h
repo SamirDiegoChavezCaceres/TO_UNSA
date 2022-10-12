@@ -14,6 +14,7 @@ class List {
     int size();
     int getKth(int idx); //includes 0
     Node* removeKth(int idx); //includes 0
+    void addKth(int idx, int e); //includes 0
   private:
     Node* last;  
 };

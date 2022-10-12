@@ -56,3 +56,20 @@ Node* List::removeKth(int idx){
   //idx-1 idx *
   //iter n n->next
 }
+void List::addKth(int idx, int e){
+  int c = 0;  
+  Node* n;
+  n->data = e;
+
+  Node* iter = last;
+  while(iter){
+    iter = iter->next;
+    if(c == idx-1)
+      n->next = iter->next;
+      iter->next = n;
+      iter = nullptr;
+    c++;
+  }
+  //idx-1 idx *
+  //iter n n->next
+}
