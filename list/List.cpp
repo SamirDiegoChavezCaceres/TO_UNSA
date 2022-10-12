@@ -1,4 +1,6 @@
 #include "List.h"
+#include <iostream>
+using namespace std;
 List::List(){
   last = nullptr;
 }
@@ -24,8 +26,9 @@ int List::size(){
   Node* iter = last;
   while(iter){
     iter = iter->next;
-    if(iter == last)
+    if(iter == last){
       iter = nullptr;
+    }
     c++;
   }
   return c;
@@ -36,40 +39,60 @@ int List::getKth(int idx){
   while(iter){
     iter = iter->next;
     if(c == idx)
-      iter = nullptr;
+      return iter->data;
     c++;
   }
-  return iter->data;
+  return -1;
 }
 Node* List::removeKth(int idx){
   int c = 0;  
+  Node* temp;
   Node* iter = last;
-  Node* n;
   while(iter){
     iter = iter->next;
-    if(c == idx-1)
-      n = iter->next;
-      iter->next = n->next;
-      return n;
+    if(c == (idx-1)) {
+      temp = iter->next;
+      iter->next -> data = iter->next -> next->data;
+      iter->next -> next = iter->next -> next->next;
+      return temp;
+    }
     c++;
   }
   //idx-1 idx *
   //iter n n->next
+  return nullptr;
 }
 void List::addKth(int idx, int e){
   int c = 0;  
-  Node* n;
-  n->data = e;
-
+  Node* temp;
   Node* iter = last;
   while(iter){
     iter = iter->next;
-    if(c == idx-1)
-      n->next = iter->next;
-      iter->next = n;
-      iter = nullptr;
+    if(c == idx-1) {
+      temp = iter->next;
+
+      iter->next = new Node;
+      iter->next->data = e;
+      iter->next->next = temp;
+      
+      iter = NULL;
+    }
     c++;
   }
-  //idx-1 idx *
-  //iter n n->next
+  
+  //idx-1  idx     *
+  //iter    n   n->next
+}
+bool List::isEmpty(){
+  return last == nullptr;
+};
+void List::print(){
+  Node* iter = last;
+  while(iter){
+    iter = iter->next;
+    cout << iter->data << " ";
+    if(iter == last)
+      iter = nullptr;
+  }
+  cout << endl;
 }
