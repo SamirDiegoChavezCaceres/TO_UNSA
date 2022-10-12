@@ -41,3 +41,18 @@ int List::getKth(int idx){
   }
   return iter->data;
 }
+Node* List::removeKth(int idx){
+  int c = 0;  
+  Node* iter = last;
+  while(iter){
+    iter = iter->next;
+    if(c == idx-1)
+      iter = nullptr;
+    c++;
+  }
+  //idx-1 idx *
+  //iter n n->next
+  Node* n = iter->next;
+  iter->next = n->next;
+  return n;
+}

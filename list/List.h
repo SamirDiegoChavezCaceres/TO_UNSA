@@ -13,6 +13,7 @@ class List {
     bool isEmpty();
     int size();
     int getKth(int idx); //includes 0
+    Node* removeKth(int idx); //includes 0
   private:
     Node* last;  
 };
