@@ -63,6 +63,8 @@ Node* List::removeKth(int idx){
   return nullptr;
 }
 void List::addKth(int idx, int e){
+  if(idx<0)
+    return 0;
   int c = 0;  
   Node* temp;
   Node* iter = last;
