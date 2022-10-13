@@ -80,6 +80,8 @@ void List::addKth(int idx, int e){
       iter = NULL;
     }
     c++;
+    //if c = size()
+    //modificas last;
   }
   
   //idx-1  idx     *
