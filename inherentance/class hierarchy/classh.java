@@ -2,13 +2,13 @@ import java.util.*;
 class classh {
     public static void main(String[] args) {
         class Persona {
-        private int edad;
-        public Persona(int edad){
-            this.edad = edad;
-        }
-        public String toString(){
-            return "Tengo " + this.edad + " años.\n";
-        }
+            private int edad;
+            public Persona(int edad){
+                this.edad = edad;
+            }
+            public String toString(){
+                return "Tengo " + this.edad + " años.\n";
+            }
         }
         class Estudiante extends Persona {
             private int libros;
