@@ -13,8 +13,8 @@ class X:
     def foo(self, b):
         return b
 class Y(X):
-    def foo(self, b):
-        return b 
+    def foo(self, a):
+        return a 
 a = A()
 b = B()
 c = C()
